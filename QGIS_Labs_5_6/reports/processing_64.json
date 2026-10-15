@@ -1,0 +1,193 @@
+[
+  {
+    "algorithm": "qgis:minimumboundinggeometry",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/spatial_statistics.gpkg|layername=roads_34S",
+      "TYPE": 3,
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_a53ef19f_baac_4a90_a378_36d5c97fa94b'}\n"
+  },
+  {
+    "algorithm": "native:randompointsinpolygons",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/spatial_statistics.gpkg|layername=roads_convex_hull",
+      "POINTS_NUMBER": 100,
+      "MIN_DISTANCE": 0,
+      "MIN_DISTANCE_GLOBAL": 0,
+      "SEED": 202744,
+      "INCLUDE_POLYGON_ATTRIBUTES": false,
+      "OUTPUT": "memory:"
+    },
+    "messages": "Total number of points generated: 100\nNumber of missed points: 0\nPolygons with missing points: 0\nFeatures with empty or missing geometries: 0\nResults: {'FEATURES_WITH_EMPTY_OR_NO_GEOMETRY': 0, 'OUTPUT': 'output_61e2e804_362a_4db4_bc35_71df954e320a', 'OUTPUT_POINTS': 100, 'POINTS_MISSED': 0, 'POLYGONS_WITH_MISSED_POINTS': 0}\n"
+  },
+  {
+    "algorithm": "native:fieldcalculator",
+    "parameters": {
+      "INPUT": "Point?crs=EPSG:32734&field=rand_point_id:long(0,0)&uid={282157f9-39e9-4ee5-95dc-8ae7247fcfe4}",
+      "FIELD_NAME": "id",
+      "FIELD_TYPE": 1,
+      "FIELD_LENGTH": 20,
+      "FIELD_PRECISION": 6,
+      "FORMULA": "$id",
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_afe89b53_2027_4298_a83a_197432539cb7'}\n"
+  },
+  {
+    "algorithm": "native:rastersampling",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/spatial_statistics.gpkg|layername=random_points_100",
+      "RASTERCOPY": "PACKAGE/data/srtm_41_19.tif",
+      "COLUMN_PREFIX": "rvalue_",
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_0d572dd6_e76b_491b_8848_5a62a2cab43c'}\n"
+  },
+  {
+    "algorithm": "native:randompointsinpolygons",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/spatial_statistics.gpkg|layername=roads_convex_hull",
+      "POINTS_NUMBER": 10000,
+      "MIN_DISTANCE": 0,
+      "MIN_DISTANCE_GLOBAL": 0,
+      "SEED": 212644,
+      "INCLUDE_POLYGON_ATTRIBUTES": false,
+      "OUTPUT": "memory:"
+    },
+    "messages": "Total number of points generated: 10000\nNumber of missed points: 0\nPolygons with missing points: 0\nFeatures with empty or missing geometries: 0\nResults: {'FEATURES_WITH_EMPTY_OR_NO_GEOMETRY': 0, 'OUTPUT': 'output_6fd0970d_6c66_4f73_8431_304c86a34422', 'OUTPUT_POINTS': 10000, 'POINTS_MISSED': 0, 'POLYGONS_WITH_MISSED_POINTS': 0}\n"
+  },
+  {
+    "algorithm": "native:fieldcalculator",
+    "parameters": {
+      "INPUT": "Point?crs=EPSG:32734&field=rand_point_id:long(0,0)&uid={260701eb-3cff-4afb-a82e-9a24f97fae24}",
+      "FIELD_NAME": "id",
+      "FIELD_TYPE": 1,
+      "FIELD_LENGTH": 20,
+      "FIELD_PRECISION": 6,
+      "FORMULA": "$id",
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_d0c38467_70b1_4a9b_acf1_3c75a284c0f0'}\n"
+  },
+  {
+    "algorithm": "native:rastersampling",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/spatial_statistics.gpkg|layername=random_points_10000",
+      "RASTERCOPY": "PACKAGE/data/srtm_41_19.tif",
+      "COLUMN_PREFIX": "rvalue_",
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_c6a3a3bf_fa68_4b50_8e72_a15c3ff9b3fc'}\n"
+  },
+  {
+    "algorithm": "qgis:basicstatisticsforfields",
+    "parameters": {
+      "INPUT_LAYER": "PACKAGE/Lab6/spatial_statistics.gpkg|layername=sampled_points_100",
+      "FIELD_NAME": "rvalue_1",
+      "OUTPUT": "memory:",
+      "OUTPUT_HTML_FILE": "PACKAGE/reports/elevation_statistics.html"
+    },
+    "messages": "Results: {'COUNT': 100, 'CV': 0.7766383471440805, 'EMPTY': 0, 'FILLED': 100, 'FIRSTQUARTILE': 103.0, 'IQR': 60.0, 'MAJORITY': 143.0, 'MAX': 833.0, 'MEAN': 154.5, 'MEDIAN': 129.0, 'MIN': 25.0, 'MINORITY': 25.0, 'OUTPUT': 'output_abbe2823_d9d2_4db9_aaa6_aa90fa1f9be8', 'OUTPUT_HTML_FILE': 'PACKAGE/reports/elevation_statistics.html', 'RANGE': 808.0, 'STD_DEV': 119.99062463376045, 'SUM': 15450.0, 'THIRDQUARTILE': 163.0, 'UNIQUE': 78}\n"
+  },
+  {
+    "algorithm": "native:randompointsinpolygons",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/spatial_statistics.gpkg|layername=roads_convex_hull",
+      "POINTS_NUMBER": 3,
+      "MIN_DISTANCE": 0,
+      "MIN_DISTANCE_GLOBAL": 0,
+      "SEED": 2026,
+      "INCLUDE_POLYGON_ATTRIBUTES": false,
+      "OUTPUT": "memory:"
+    },
+    "messages": "Total number of points generated: 3\nNumber of missed points: 0\nPolygons with missing points: 0\nFeatures with empty or missing geometries: 0\nResults: {'FEATURES_WITH_EMPTY_OR_NO_GEOMETRY': 0, 'OUTPUT': 'output_94e085ed_fa35_4ba1_8457_b559df6ba703', 'OUTPUT_POINTS': 3, 'POINTS_MISSED': 0, 'POLYGONS_WITH_MISSED_POINTS': 0}\n"
+  },
+  {
+    "algorithm": "native:fieldcalculator",
+    "parameters": {
+      "INPUT": "Point?crs=EPSG:32734&field=rand_point_id:long(0,0)&uid={325d44e7-584f-4fd9-b088-07dd033b92bc}",
+      "FIELD_NAME": "id",
+      "FIELD_TYPE": 1,
+      "FIELD_LENGTH": 20,
+      "FIELD_PRECISION": 6,
+      "FORMULA": "$id",
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_340ebad2_0690_49d4_bf0c_b54ce4f6cea5'}\n"
+  },
+  {
+    "algorithm": "qgis:distancematrix",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/spatial_statistics.gpkg|layername=distance_points",
+      "INPUT_FIELD": "id",
+      "TARGET": "PACKAGE/Lab6/spatial_statistics.gpkg|layername=sampled_points_100",
+      "TARGET_FIELD": "id",
+      "MATRIX_TYPE": 2,
+      "NEAREST_POINTS": 2,
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_5da28a24_ccaa_4497_a9e8_856b42a9705d'}\n"
+  },
+  {
+    "algorithm": "native:nearestneighbouranalysis",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/spatial_statistics.gpkg|layername=random_points_100",
+      "OUTPUT_HTML_FILE": "PACKAGE/reports/nearest_neighbour.html"
+    },
+    "messages": "Results: {'EXPECTED_MD': 1645.567188832677, 'NN_INDEX': 0.9016669937891327, 'OBSERVED_MD': 1483.753620232794, 'OUTPUT_HTML_FILE': 'PACKAGE/reports/nearest_neighbour.html', 'POINT_COUNT': 100, 'Z_SCORE': -1.8811793352247328}\n"
+  },
+  {
+    "algorithm": "native:meancoordinates",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/spatial_statistics.gpkg|layername=random_points_100",
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_f715f207_ad3b_4f9a_89fc_6ffce571ea96'}\n"
+  },
+  {
+    "algorithm": "native:centroids",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/spatial_statistics.gpkg|layername=roads_convex_hull",
+      "ALL_PARTS": false,
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_e25729e9_d7c2_437a_af66_ed7d61e14e5e'}\n"
+  },
+  {
+    "algorithm": "gdal:gridinversedistancenearestneighbor",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/spatial_statistics.gpkg|layername=sampled_points_100",
+      "Z_FIELD": "rvalue_1",
+      "POWER": 5.0,
+      "SMOOTHING": 0,
+      "RADIUS": 52599.49576249643,
+      "MAX_POINTS": 12,
+      "MIN_POINTS": 0,
+      "NODATA": -9999,
+      "DATA_TYPE": 5,
+      "OPTIONS": "COMPRESS=DEFLATE",
+      "EXTRA": "-txe 428788.808856757 473049.692803538 -tye 6212181.27719443 6240601.00813472 -outsize 554 356",
+      "OUTPUT": "PACKAGE/Lab6/idw_100.tif"
+    },
+    "messages": "GDAL command:\ngdal_grid -l sampled_points_100 -zfield rvalue_1 -a invdistnn:power=5.0:smoothing=0.0:radius=52599.49576249643:max_points=12:min_points=0:nodata=-9999.0 -ot Float32 -of GTiff -co COMPRESS=DEFLATE -txe 428788.808856757 473049.692803538 -tye 6212181.27719443 6240601.00813472 -outsize 554 356 PACKAGE/Lab6/spatial_statistics.gpkg PACKAGE/Lab6/idw_100.tif\nGDAL command output:\nGrid data type is \"Float32\"\nGrid size = (554 356).\nCorner coordinates = (428788.808857 6240601.008135)-(473049.692804 6212181.277194).\nGrid cell size = (79.893292 -79.830705).\nSource point count = 100.\nAlgorithm name: \"invdistnn\".\nOptions are: \"power=5.000000:smoothing=0.000000:radius=52599.495762:max_points=12:min_points=0:nodata=-9999.000000\n\n0...10...20...30...40...50...60...70...80...90...100 - done.\nProcess completed successfully\nResults: {'OUTPUT': 'PACKAGE/Lab6/idw_100.tif'}\n"
+  },
+  {
+    "algorithm": "gdal:gridinversedistancenearestneighbor",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/spatial_statistics.gpkg|layername=sampled_points_10000",
+      "Z_FIELD": "rvalue_1",
+      "POWER": 5.0,
+      "SMOOTHING": 2,
+      "RADIUS": 52599.49576249643,
+      "MAX_POINTS": 12,
+      "MIN_POINTS": 0,
+      "NODATA": -9999,
+      "DATA_TYPE": 5,
+      "OPTIONS": "COMPRESS=DEFLATE",
+      "EXTRA": "-txe 428788.808856757 473049.692803538 -tye 6212181.27719443 6240601.00813472 -outsize 554 356",
+      "OUTPUT": "PACKAGE/Lab6/idw_10000.tif"
+    },
+    "messages": "GDAL command:\ngdal_grid -l sampled_points_10000 -zfield rvalue_1 -a invdistnn:power=5.0:smoothing=2.0:radius=52599.49576249643:max_points=12:min_points=0:nodata=-9999.0 -ot Float32 -of GTiff -co COMPRESS=DEFLATE -txe 428788.808856757 473049.692803538 -tye 6212181.27719443 6240601.00813472 -outsize 554 356 PACKAGE/Lab6/spatial_statistics.gpkg PACKAGE/Lab6/idw_10000.tif\nGDAL command output:\nGrid data type is \"Float32\"\nGrid size = (554 356).\nCorner coordinates = (428788.808857 6240601.008135)-(473049.692804 6212181.277194).\nGrid cell size = (79.893292 -79.830705).\nSource point count = 10000.\nAlgorithm name: \"invdistnn\".\nOptions are: \"power=5.000000:smoothing=2.000000:radius=52599.495762:max_points=12:min_points=0:nodata=-9999.000000\n\n0...10...20...30...40...50...60...70...80...90...100 - done.\nProcess completed successfully\nResults: {'OUTPUT': 'PACKAGE/Lab6/idw_10000.tif'}\n"
+  }
+]

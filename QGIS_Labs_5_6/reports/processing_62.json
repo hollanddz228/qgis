@@ -1,0 +1,104 @@
+[
+  {
+    "algorithm": "native:buffer",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/vector_analysis.gpkg|layername=roads_34S",
+      "DISTANCE": 50,
+      "SEGMENTS": 5,
+      "END_CAP_STYLE": 0,
+      "JOIN_STYLE": 0,
+      "MITER_LIMIT": 2,
+      "DISSOLVE": false,
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_c3798cdd_f9d8_4d54_bb2e_710405567784'}\n"
+  },
+  {
+    "algorithm": "native:buffer",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/vector_analysis.gpkg|layername=roads_34S",
+      "DISTANCE": 50,
+      "SEGMENTS": 5,
+      "END_CAP_STYLE": 0,
+      "JOIN_STYLE": 0,
+      "MITER_LIMIT": 2,
+      "DISSOLVE": true,
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_bca4e962_5208_4e44_841c_cbef608ae84a'}\n"
+  },
+  {
+    "algorithm": "native:buffer",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/vector_analysis.gpkg|layername=schools_34S",
+      "DISTANCE": 1000,
+      "SEGMENTS": 20,
+      "END_CAP_STYLE": 0,
+      "JOIN_STYLE": 0,
+      "MITER_LIMIT": 2,
+      "DISSOLVE": true,
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_55117ed1_534c_41b4_a3d9_5ca92a7808e4'}\n"
+  },
+  {
+    "algorithm": "native:intersection",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/vector_analysis.gpkg|layername=roads_buffer_50m_dissolved",
+      "OVERLAY": "PACKAGE/Lab6/vector_analysis.gpkg|layername=schools_buffer_1km_dissolved",
+      "OUTPUT": "memory:"
+    },
+    "messages": "Creating spatial index\nCalculating intersection\nResults: {'OUTPUT': 'output_74a3c662_28d9_4d01_9af4_f6a68051bd2d'}\n"
+  },
+  {
+    "algorithm": "native:extractbylocation",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/vector_analysis.gpkg|layername=buildings_34S",
+      "PREDICATE": [
+        0
+      ],
+      "INTERSECT": "PACKAGE/Lab6/vector_analysis.gpkg|layername=road_school_buffers_intersect",
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_5d023092_fdb7_4fb1_9da4_bb7d9fdb9a66'}\n"
+  },
+  {
+    "algorithm": "native:buffer",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/vector_analysis.gpkg|layername=restaurants_34S",
+      "DISTANCE": 500,
+      "SEGMENTS": 5,
+      "END_CAP_STYLE": 0,
+      "JOIN_STYLE": 0,
+      "MITER_LIMIT": 2,
+      "DISSOLVE": false,
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_cdddb2f9_d690_4b20_8ed8_7667d08c40d4'}\n"
+  },
+  {
+    "algorithm": "native:extractbylocation",
+    "parameters": {
+      "INPUT": "PACKAGE/Lab6/vector_analysis.gpkg|layername=well_located_houses",
+      "PREDICATE": [
+        0
+      ],
+      "INTERSECT": "PACKAGE/Lab6/vector_analysis.gpkg|layername=restaurants_buffer_500m",
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_bb4633ed_4f5a_43cb_a48c_a2eddc2973d5'}\n"
+  },
+  {
+    "algorithm": "native:fieldcalculator",
+    "parameters": {
+      "INPUT": "MultiPolygon?crs=EPSG:32734&field=fid:long(0,0)&field=full_id:string(0,0)&field=osm_id:string(0,0)&field=osm_type:string(0,0)&field=building:string(0,0)&field=healthcare%3Aspeciality:string(0,0)&field=operator:string(0,0)&field=height:string(0,0)&field=internet_access%3Afee:string(0,0)&field=layer:string(0,0)&field=man_made:string(0,0)&field=sport:string(0,0)&field=level:string(0,0)&field=addr%3Aerf:string(0,0)&field=old_name:string(0,0)&field=building%3Aroof:string(0,0)&field=opening_hours:string(0,0)&field=description:string(0,0)&field=wikidata:string(0,0)&field=name%3Aen:string(0,0)&field=addr%3Ahousenumber%3Asource:string(0,0)&field=name%3Aaf:string(0,0)&field=email:string(0,0)&field=service_times:string(0,0)&field=fax:string(0,0)&field=security:string(0,0)&field=information:string(0,0)&field=sahra:string(0,0)&field=religion:string(0,0)&field=denomination:string(0,0)&field=office:string(0,0)&field=internet_access:string(0,0)&field=contact%3Awebsite:string(0,0)&field=contact%3Aphone:string(0,0)&field=contact%3Amobile:string(0,0)&field=contact%3Aemail:string(0,0)&field=start_date:string(0,0)&field=national_monument:string(0,0)&field=social_facility%3Afor:string(0,0)&field=social_facility:string(0,0)&field=addr%3Acountry:string(0,0)&field=website:string(0,0)&field=stars:string(0,0)&field=phone:string(0,0)&field=wheelchair:string(0,0)&field=cuisine:string(0,0)&field=healthcare:string(0,0)&field=shop:string(0,0)&field=brand%3Awikidata:string(0,0)&field=brand:string(0,0)&field=addr%3Ahousenumber:string(0,0)&field=addr%3Acity:string(0,0)&field=drive_through:string(0,0)&field=atm:string(0,0)&field=amenity:string(0,0)&field=addr%3Astreet:string(0,0)&field=addr%3Apostcode:string(0,0)&field=addr%3Ahousename:string(0,0)&field=aeroway:string(0,0)&field=roof%3Alevels:string(0,0)&field=tourism:string(0,0)&field=type:string(0,0)&field=name:string(0,0)&field=building%3Awalls:string(0,0)&field=building%3Alevels:string(0,0)&uid={7256c528-28e3-4f10-b986-5c16b1c746e4}",
+      "FIELD_NAME": "AREA",
+      "FIELD_TYPE": 0,
+      "FIELD_LENGTH": 20,
+      "FIELD_PRECISION": 6,
+      "FORMULA": "$area",
+      "OUTPUT": "memory:"
+    },
+    "messages": "Results: {'OUTPUT': 'output_e75a2c60_f148_4876_9512_50ee6aa7521f'}\n"
+  }
+]

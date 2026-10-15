@@ -1,0 +1,285 @@
+{
+  "qgis_version": "3.40.6-Bratislava",
+  "projects": [
+    {
+      "project": "Lab5/Lab_5.qgz",
+      "layers": [
+        {
+          "name": "Аэрофотоснимок — Swellendam, 2010",
+          "crs": "EPSG:4326"
+        },
+        {
+          "name": "roads",
+          "crs": "EPSG:4326",
+          "features": 717
+        },
+        {
+          "name": "routes",
+          "crs": "EPSG:4326",
+          "features": 2
+        },
+        {
+          "name": "school_property",
+          "crs": "EPSG:4326",
+          "features": 3
+        },
+        {
+          "name": "school_property_before_vertex_edit",
+          "crs": "EPSG:4326",
+          "features": 3
+        }
+      ]
+    },
+    {
+      "project": "Lab6/Lab_6_1_Buildings.qgz",
+      "layers": [
+        {
+          "name": "buildings — EPSG:4326",
+          "crs": "EPSG:4326",
+          "features": 4708
+        },
+        {
+          "name": "buildings_reprojected — EPSG:32734",
+          "crs": "EPSG:32734",
+          "features": 4708
+        }
+      ]
+    },
+    {
+      "project": "Lab6/Lab_6_1_Custom_CRS.qgz",
+      "layers": [
+        {
+          "name": "oceans",
+          "crs": "EPSG:4326",
+          "features": 2
+        }
+      ]
+    },
+    {
+      "project": "Lab6/Lab_6_1_Projections.qgz",
+      "layers": [
+        {
+          "name": "RSA — EPSG:3410",
+          "crs": "",
+          "features": 9
+        },
+        {
+          "name": "buildings — EPSG:4326",
+          "crs": "EPSG:4326",
+          "features": 4708
+        },
+        {
+          "name": "buildings_reprojected",
+          "crs": "EPSG:32734",
+          "features": 4708
+        },
+        {
+          "name": "continents — EPSG:4326",
+          "crs": "EPSG:4326",
+          "features": 3566
+        }
+      ]
+    },
+    {
+      "project": "Lab6/Lab_6_2_Vector_analysis.qgz",
+      "layers": [
+        {
+          "name": "buildings_34S",
+          "crs": "EPSG:32734",
+          "features": 4708
+        },
+        {
+          "name": "houses_restaurants_500m",
+          "crs": "EPSG:32734",
+          "features": 996
+        },
+        {
+          "name": "landuse_34S",
+          "crs": "EPSG:32734",
+          "features": 62
+        },
+        {
+          "name": "restaurants_34S",
+          "crs": "EPSG:32734",
+          "features": 11
+        },
+        {
+          "name": "restaurants_buffer_500m",
+          "crs": "EPSG:32734",
+          "features": 11
+        },
+        {
+          "name": "road_school_buffers_intersect",
+          "crs": "EPSG:32734",
+          "features": 1
+        },
+        {
+          "name": "roads_34S",
+          "crs": "EPSG:32734",
+          "features": 466
+        },
+        {
+          "name": "roads_buffer_50m",
+          "crs": "EPSG:32734",
+          "features": 466
+        },
+        {
+          "name": "roads_buffer_50m_dissolved",
+          "crs": "EPSG:32734",
+          "features": 1
+        },
+        {
+          "name": "schools_34S",
+          "crs": "EPSG:32734",
+          "features": 4
+        },
+        {
+          "name": "schools_buffer_1km_dissolved",
+          "crs": "EPSG:32734",
+          "features": 1
+        },
+        {
+          "name": "solution",
+          "crs": "EPSG:32734",
+          "features": 996
+        },
+        {
+          "name": "well_located_houses",
+          "crs": "EPSG:32734",
+          "features": 3296
+        }
+      ]
+    },
+    {
+      "project": "Lab6/Lab_6_3_Network.qgz",
+      "layers": [
+        {
+          "name": "fastest_50kmh",
+          "crs": "EPSG:32734",
+          "features": 1
+        },
+        {
+          "name": "fastest_speed_limits",
+          "crs": "EPSG:32734",
+          "features": 1
+        },
+        {
+          "name": "network_lines",
+          "crs": "EPSG:32734",
+          "features": 7
+        },
+        {
+          "name": "network_points",
+          "crs": "EPSG:32734",
+          "features": 2
+        },
+        {
+          "name": "service_area_250m",
+          "crs": "EPSG:32734",
+          "features": 2
+        },
+        {
+          "name": "service_boundary_nodes",
+          "crs": "EPSG:32734",
+          "features": 6
+        },
+        {
+          "name": "shortest_path",
+          "crs": "EPSG:32734",
+          "features": 1
+        },
+        {
+          "name": "start_end",
+          "crs": "EPSG:32734",
+          "features": 2
+        },
+        {
+          "name": "walking_4kmh",
+          "crs": "EPSG:32734",
+          "features": 1
+        }
+      ]
+    },
+    {
+      "project": "Lab6/Lab_6_4_Statistics.qgz",
+      "layers": [
+        {
+          "name": "IDW — 10000 точек, power=5, smoothing=2",
+          "crs": "EPSG:32734"
+        },
+        {
+          "name": "IDW — 100 точек, power=5, smoothing=0",
+          "crs": "EPSG:32734"
+        },
+        {
+          "name": "SRTM — исходная модель высот",
+          "crs": "EPSG:32733"
+        },
+        {
+          "name": "distance_matrix_k2",
+          "crs": "EPSG:32734",
+          "features": 3
+        },
+        {
+          "name": "distance_points",
+          "crs": "EPSG:32734",
+          "features": 3
+        },
+        {
+          "name": "hull_centroid",
+          "crs": "EPSG:32734",
+          "features": 1
+        },
+        {
+          "name": "mean_coordinates",
+          "crs": "EPSG:32734",
+          "features": 1
+        },
+        {
+          "name": "random_points_10000",
+          "crs": "EPSG:32734",
+          "features": 10000
+        },
+        {
+          "name": "random_points_100",
+          "crs": "EPSG:32734",
+          "features": 100
+        },
+        {
+          "name": "roads_34S",
+          "crs": "EPSG:32734",
+          "features": 717
+        },
+        {
+          "name": "roads_convex_hull",
+          "crs": "EPSG:32734",
+          "features": 1
+        },
+        {
+          "name": "sampled_points_10000",
+          "crs": "EPSG:32734",
+          "features": 10000
+        },
+        {
+          "name": "sampled_points_100",
+          "crs": "EPSG:32734",
+          "features": 100
+        }
+      ]
+    }
+  ],
+  "databases": {
+    "Lab5/stages.gpkg": "ok",
+    "Lab6/spatial_statistics.gpkg": "ok",
+    "Lab6/vector_analysis.gpkg": "ok",
+    "Lab6/network_results.gpkg": "ok",
+    "data/network.gpkg": "ok",
+    "data/training_data.gpkg": "ok"
+  },
+  "checks": [
+    "Lab 5: valid geometry and unique IDs; 3 polygons, 2 routes",
+    "All 996 solution buildings have AREA >= 100; distances checked in solution_checks.csv",
+    "100 and 10000 samples; mean coordinates and k=2 distance matrix independently verified",
+    "Both IDW rasters: 554 x 356 pixels; no missing or infinite output values"
+  ]
+}

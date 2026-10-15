@@ -1,0 +1,81 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Лабораторные 5 и 6 — QGIS</title><style>
+*{box-sizing:border-box}body{margin:0;background:#edf2f2;color:#20323b;font:17px/1.65 "Segoe UI",Arial,sans-serif}
+main{max-width:1120px;margin:32px auto;padding:40px 52px;background:white;border-radius:14px}
+h1,h2,h3{line-height:1.25;color:#174d51}h1{font-size:36px;margin-bottom:12px}h2{margin-top:50px;font-size:27px}h3{margin-top:28px}
+p{margin:14px 0}a{color:#006b76}code{background:#eaf1f3;padding:2px 5px;border-radius:4px;font-size:.93em;overflow-wrap:anywhere}
+.lead{font-size:20px}.notice{border-left:4px solid #388783;background:#eff7f6;padding:16px 20px;margin:24px 0}
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:15px}td,th{padding:11px 12px;text-align:left;border-bottom:1px solid #d8e2e4;vertical-align:top}th{background:#edf5f4}
+figure{margin:22px 0}img{display:block;width:100%;border-radius:7px;border:1px solid #dce4e6}figcaption{font-size:15px;color:#52676e;margin-top:6px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid figure{margin:12px 0}li{margin:7px 0}.small{font-size:14px;color:#5c6c72}
+@media(max-width:800px){main{padding:22px;margin:0;border-radius:0}.grid{grid-template-columns:1fr}table{font-size:13px}td,th{padding:7px}h1{font-size:29px}}
+@media print{body{background:white}main{margin:0;padding:0}figure,table{break-inside:avoid}h2{break-after:avoid}a{color:inherit}}
+</style><main><h1>Лабораторные работы 5 и 6</h1>
+<p class="lead">Результаты упражнений из QGIS Training Manual 3.44.</p>
+<div class="notice"><b>Начните здесь.</b> Полностью распакуйте архив и открывайте файлы <code>.qgz</code> в QGIS.
+Папки <code>data</code>, <code>Lab5</code> и <code>Lab6</code> должны оставаться рядом. Все исходные слои включены в комплект.</div>
+<p>Результаты подготовлены с помощью PyQGIS и GDAL. Карты ниже — экспорты результатов, а не скриншоты работы на вашем компьютере.
+Присланные проекты предыдущих лабораторных сохранены без изменений.</p>
+<h2>Что открывать</h2><table><thead><tr><th>Файл</th><th>Задание</th><th>Содержимое</th></tr></thead><tbody><tr><td><a href="Lab5/Lab_5.qgz"><code>Lab5/Lab_5.qgz</code></a></td><td>5. Создание векторных данных</td><td>Три полигона, две линии, изменение координаты вершины.</td></tr><tr><td><a href="Lab6/Lab_6_1_Projections.qgz"><code>Lab6/Lab_6_1_Projections.qgz</code></a></td><td>6.1. Перепроецирование на лету</td><td>Проект EPSG:6933; continents в EPSG:4326 и RSA в EPSG:3410.</td></tr><tr><td><a href="Lab6/Lab_6_1_Buildings.qgz"><code>Lab6/Lab_6_1_Buildings.qgz</code></a></td><td>6.1. Экспорт в другую СК</td><td>Совмещение зданий в EPSG:4326 и EPSG:32734.</td></tr><tr><td><a href="Lab6/Lab_6_1_Custom_CRS.qgz"><code>Lab6/Lab_6_1_Custom_CRS.qgz</code></a></td><td>6.1. Пользовательская проекция</td><td>Van der Grinten I. Определение WKT встроено в проект.</td></tr><tr><td><a href="Lab6/Lab_6_2_Vector_analysis.qgz"><code>Lab6/Lab_6_2_Vector_analysis.qgz</code></a></td><td>6.2. Векторный анализ</td><td>Буферы, пересечение, извлечение зданий и фильтр площади.</td></tr><tr><td><a href="Lab6/Lab_6_3_Network.qgz"><code>Lab6/Lab_6_3_Network.qgz</code></a></td><td>6.3. Сетевой анализ</td><td>Кратчайший и быстрейшие пути, зона достижимости 250 м.</td></tr><tr><td><a href="Lab6/Lab_6_4_Statistics.qgz"><code>Lab6/Lab_6_4_Statistics.qgz</code></a></td><td>6.4. Пространственная статистика</td><td>Выборки высот, расстояния, средний центр, гистограмма и IDW.</td></tr></tbody></table><p>Если браузер скачивает проект по ссылке, откройте этот же файл через Проводник Windows или меню
+<b>Проект → Открыть</b> в QGIS. Не нужно запускать Python или устанавливать дополнительные плагины.</p>
+<h2>Работа 5. Создание векторного набора данных</h2>
+<p>Созданы слои <code>school_property.shp</code> (полигоны, EPSG:4326) и <code>routes.shp</code> (линии, EPSG:4326).
+Границы обведены по аэрофотоснимку с привязкой к иллюстрациям руководства.</p><table><thead><tr><th>Слой</th><th>Поля</th><th>Объекты</th></tr></thead><tbody><tr><td>school_property</td><td>id: целое; name: текст, 80 символов</td><td>1 — Athletics Field; 2 — School Campus; 3 — Rugby Field</td></tr><tr><td>routes</td><td>id: целое; type: текст</td><td>1 — path; 2 — track</td></tr></tbody></table><p>Выполнено упражнение с таблицей вершин: у Athletics Field координата X вершины №4
+изменена с 20,4451318 на <b>20,4444</b>. Слой до изменения сохранён в
+<code>Lab5/stages.gpkg → school_property_before_vertex_edit</code>. Конечные геометрии проверены на валидность.</p><figure><img src="maps/Lab_5.png" alt="Школьная территория после изменения координаты вершины" loading="lazy"><figcaption>Школьная территория после изменения координаты вершины</figcaption></figure><figure><img src="maps/Lab_5_routes.png" alt="Две оцифрованные линии: path — оранжевый пунктир; track — жёлтая линия" loading="lazy"><figcaption>Две оцифрованные линии: path — оранжевый пунктир; track — жёлтая линия</figcaption></figure><p><b>В QGIS:</b> для просмотра линий нажмите правой кнопкой на <code>routes</code> и выберите
+<b>Приблизить к слою</b>. Для просмотра атрибутов нажмите F6 при выбранном слое.</p>
+<h2>Работа 6.1. Перепроецирование и преобразование данных</h2>
+<ul><li>В проекте карты мира совмещены <code>continents</code> (EPSG:4326) и <code>RSA</code> (EPSG:3410), СК проекта — EPSG:6933.</li>
+<li>4708 зданий экспортированы в <code>buildings_reprojected.shp</code>, EPSG:32734 (WGS 84 / UTM zone 34S).
+Отдельный проект показывает совпадение исходных и перепроецированных геометрий.</li>
+<li>В проекте с океанами применена Van der Grinten I. WKT из руководства встроен в проект и приложен отдельным файлом.</li></ul>
+<p>При экспорте в Shapefile длинные имена полей сокращаются по ограничениям формата.
+Полные имена исходных атрибутов сохранены в <code>data/training_data.gpkg</code>.</p>
+<div class="grid"><figure><img src="maps/Lab_6_1_Projections.png" alt="Южная Африка: перепроецирование на лету в EPSG:6933" loading="lazy"><figcaption>Южная Африка: перепроецирование на лету в EPSG:6933</figcaption></figure><figure><img src="maps/Lab_6_1_Custom_CRS.png" alt="Пользовательская проекция Van der Grinten I" loading="lazy"><figcaption>Пользовательская проекция Van der Grinten I</figcaption></figure></div><p>Для повторения наблюдения за масштабом переключите СК проекта карты мира между EPSG:4326 и EPSG:6933,
+установите масштаб 1:5 000 000 и перемещайте карту.</p>
+<h2>Работа 6.2. Векторный анализ</h2>
+<p>Все расчётные слои сохранены в <code>Lab6/vector_analysis.gpkg</code> в EPSG:32734, единица расстояний — метр.</p>
+<p>Фильтр дорог: <code>"highway" NOT IN ('footway', 'path', 'unclassified', 'track') AND "highway" IS NOT NULL</code>.
+После фильтра осталось 466 дорог; исходные входные слои также содержат 4708 зданий, 4 школы и 11 ресторанов.</p><table><thead><tr><th>Шаг</th><th>Сохранённый слой</th><th>Объектов</th></tr></thead><tbody><tr><td>Буфер дорог 50 м</td><td>roads_buffer_50m</td><td>466</td></tr><tr><td>Объединение буферов дорог</td><td>roads_buffer_50m_dissolved</td><td>1</td></tr><tr><td>Буфер школ 1000 м, 20 сегментов; объединение</td><td>schools_buffer_1km_dissolved</td><td>1</td></tr><tr><td>Пересечение буферов дорог и школ</td><td>road_school_buffers_intersect</td><td>1</td></tr><tr><td>Извлечение пересекающих зданий</td><td>well_located_houses</td><td>3296</td></tr><tr><td>Буфер ресторанов 500 м</td><td>restaurants_buffer_500m</td><td>11</td></tr><tr><td>Извлечение зданий у ресторанов, до фильтра площади</td><td>houses_restaurants_500m</td><td>1247</td></tr><tr><td>AREA = $area; фильтр "AREA" >= 100; экспорт</td><td>solution</td><td>996</td></tr></tbody></table><p><b>Итог — 996 зданий.</b> Каждый объект итогового слоя проверен по расстояниям до ближайших дорог,
+школ и ресторанов. Таблица проверки — <a href="reports/solution_checks.csv">solution_checks.csv</a>.
+Как в инструкции, расстояние до школы здесь определяется по прямой, через буфер; для отбора используется пересечение геометрий.</p><figure><img src="maps/Lab_6_2_Vector_analysis.png" alt="Красные здания — solution; серые — остальные здания; зелёные объекты — школы; фиолетовые — рестораны" loading="lazy"><figcaption>Красные здания — solution; серые — остальные здания; зелёные объекты — школы; фиолетовые — рестораны</figcaption></figure><h2>Работа 6.3. Сетевой анализ</h2>
+<p>Взята учебная сеть из <code>network.gpkg</code>. Начальная и конечная точки соответствуют координатам из диалога алгоритма в руководстве:
+<code>−337683.461296, 14891793.324881</code> и <code>−338394.378190, 14891385.941820</code> (EPSG:32734).</p><table><thead><tr><th>Режим</th><th>Слой</th><th>Результат</th></tr></thead><tbody><tr><td>Кратчайший путь</td><td>shortest_path</td><td>906,41 м</td></tr><tr><td>Быстрейший, постоянная скорость 50 км/ч</td><td>fastest_50kmh</td><td>1,0877 мин</td></tr><tr><td>Пешком, постоянная скорость 4 км/ч</td><td>walking_4kmh</td><td>13,5961 мин</td></tr><tr><td>Быстрейший с ограничениями из speed</td><td>fastest_speed_limits</td><td>1,3085 мин</td></tr><tr><td>Зона достижимости от двух точек, 250 м</td><td>service_area_250m</td><td>2 объекта; граничные узлы — service_boundary_nodes</td></tr></tbody></table><p>В маршрутах времени поле <code>cost</code> выражено в часах; добавлено поле <code>minutes = cost * 60</code>.
+Фиолетовый путь — кратчайший, зелёный — быстрейший с ограничениями скорости. Эти маршруты различаются.</p>
+<div class="grid"><figure><img src="maps/Lab_6_3_Network.png" alt="Кратчайший и быстрейший маршруты" loading="lazy"><figcaption>Кратчайший и быстрейший маршруты</figcaption></figure><figure><img src="maps/Lab_6_3_Service_area.png" alt="Участки сети в пределах 250 м от каждой исходной точки" loading="lazy"><figcaption>Участки сети в пределах 250 м от каждой исходной точки</figcaption></figure></div><p><b>В QGIS:</b> слои маршрутов включаются и выключаются флажками. Для просмотра зоны достижимости
+отключите маршруты и включите <code>service_area_250m</code>, <code>service_boundary_nodes</code> и <code>network_points</code>.</p>
+<h2>Работа 6.4. Пространственная статистика</h2>
+<p>Построена выпуклая оболочка всех дорог. Внутри неё созданы 100 случайных точек и отдельная выборка из 10 000 точек;
+высоты извлечены из <code>srtm_41_19.tif</code> в поле <code>rvalue_1</code>.
+Для расстояний и интерполяции использована EPSG:32734; растр SRTM остаётся в исходной EPSG:32733.</p>
+<p>Использован алгоритм Random points in polygons с фиксированным seed (202744 и 212644):
+он создаёт равномерные случайные точки в той же области и позволяет воспроизвести выборку.</p><table><thead><tr><th>Показатель высот, 100 точек</th><th>Значение</th></tr></thead><tbody><tr><td>Количество / пропусков</td><td>100 / 0</td></tr><tr><td>Минимум / максимум</td><td>25 / 833 м</td></tr><tr><td>Сумма</td><td>15 450 м</td></tr><tr><td>Среднее</td><td>154,50 м</td></tr><tr><td>Медиана</td><td>129,00 м</td></tr><tr><td>Стандартное отклонение, генеральная совокупность</td><td>119,99 м</td></tr><tr><td>Первый / третий квартиль (QGIS)</td><td>103,00 / 163,00 м</td></tr></tbody></table><ul><li>Созданы три точки <code>distance_points</code> и сводная матрица расстояний до двух ближайших точек выборки — <code>distance_matrix_k2</code>.</li>
+<li>Вычислены <code>mean_coordinates</code> и <code>hull_centroid</code>; их положения различаются.</li><li>Анализ ближайшего соседа: индекс 0,9017,
+наблюдаемое среднее расстояние 1 483,75 м,
+ожидаемое 1 645,57 м, Z = -1,8812.</li></ul><figure><img src="maps/Lab_6_4_Statistics.png" alt="Выборка высот; розовый маркер — средний центр, зелёный — центроид; точки 1–3 — для матрицы расстояний" loading="lazy"><figcaption>Выборка высот; розовый маркер — средний центр, зелёный — центроид; точки 1–3 — для матрицы расстояний</figcaption></figure><p>Отчёты алгоритмов: <a href="reports/elevation_statistics.html">статистика высот</a>,
+<a href="reports/nearest_neighbour.html">ближайший сосед</a>.</p>
+<h3>Гистограмма исходного SRTM</h3><p>По всем пикселям исходного растра: минимум 0 м,
+максимум 1 699 м, среднее 332,8479 м.
+Графики показывают одни и те же значения с разным вертикальным масштабом.</p>
+<figure><img src="reports/SRTM_histogram.png" alt="Гистограмма SRTM"><figcaption>Экспорт гистограммы</figcaption></figure>
+<h3>Пространственная интерполяция</h3>
+<p>Применён Grid (IDW with nearest neighbor searching): power = 5, 12 ближайших точек;
+для 100 точек smoothing = 0, для 10 000 точек smoothing = 2.
+Радиус поиска покрывает всю область. Размер результата — 554 × 356 пикселей, около 80 м на пиксель.
+Увеличенная выборка воспроизводит детали рельефа лучше. Все три изображения используют одинаковую шкалу 0–1700 м.</p>
+<div class="grid"><figure><img src="maps/Lab_6_4_IDW_100.png" alt="IDW: 100 точек" loading="lazy"><figcaption>IDW: 100 точек</figcaption></figure><figure><img src="maps/Lab_6_4_IDW_10000.png" alt="IDW: 10 000 точек" loading="lazy"><figcaption>IDW: 10 000 точек</figcaption></figure></div><figure><img src="maps/Lab_6_4_DEM.png" alt="Исходный SRTM для сравнения" loading="lazy"><figcaption>Исходный SRTM для сравнения</figcaption></figure><p><b>В QGIS:</b> выключите исходный SRTM и включите нужный слой IDW; для сравнения переключайте их по одному.
+Гистограмму можно пересчитать в свойствах SRTM, раздел <b>Гистограмма</b>.</p>
+<h2>Проверки и источники</h2>
+<p>Все семь проектов повторно открыты из копии в другом каталоге: слои найдены по относительным путям.
+Базы GeoPackage прошли проверку целостности. Геометрии работы 5 и уникальность id проверены;
+подсчитаны 100 и 10 000 точек; средние координаты и матрица расстояний проверены независимыми вычислениями;
+оба растра интерполяции прочитаны и не содержат пропусков. Подробности — <code>reports/validation.json</code>.
+Параметры выполненных алгоритмов сохранены в <code>reports/processing_*.json</code>.</p>
+<p>Проверки выполнены в QGIS 3.40.6-Bratislava на Linux. Проекты предназначены для открытия в QGIS 3.44.14;
+проверка именно на вашем Windows пока не проводилась.</p>
+<ul><li><a href="https://docs.qgis.org/3.44/ru/docs/training_manual/create_vector_data/create_new_vector.html">Задание 5: Creating a New Vector Dataset</a>.</li>
+<li><a href="https://docs.qgis.org/3.44/ru/docs/training_manual/vector_analysis/index.html">Задание 6: весь модуль Vector Analysis</a>, включая четыре урока и упражнения Try Yourself.</li>
+<li><a href="https://github.com/qgis/QGIS-Training-Data/tree/release_3.44">QGIS Training Data, release_3.44</a>, коммит <code>67d5543ac0b2f82e318f5bb921c5c88433018252</code>.</li>
+<li>Инструкции сверены с исходниками <a href="https://github.com/qgis/QGIS-Documentation/tree/release_3.44/docs/training_manual">QGIS-Documentation / release_3.44</a>.</li></ul>
+<p class="small">Лицензия учебных данных прилагается в DATA_LICENSE.md. Геометрии и аналитические результаты в Lab5 и Lab6 — новые производные данные.
+Исходные данные в data не редактировались.</p></main></html>

@@ -1,0 +1,79 @@
+{
+  "vertex_edit": {
+    "field": "Athletics Field",
+    "vertex": 4,
+    "old_x": 20.445131802721978,
+    "new_x": 20.4444,
+    "y": -34.024941730807946
+  },
+  "lab5": {
+    "school_polygons": 3,
+    "routes": 2
+  },
+  "statistics": {
+    "sample_count": 100,
+    "sample_min": 25,
+    "sample_max": 833,
+    "sample_mean": 154.5,
+    "sample_median": 129.0,
+    "sample_stdev_pop": 119.99062463376045,
+    "sample_sum": 15450,
+    "sample_q1": 103.0,
+    "sample_q3": 163.0,
+    "dem_min": 0.0,
+    "dem_max": 1699.0,
+    "dem_mean": 332.8479495062873,
+    "nearest_neighbour": {
+      "EXPECTED_MD": 1645.567188832677,
+      "NN_INDEX": 0.9016669937891327,
+      "OBSERVED_MD": 1483.753620232794,
+      "POINT_COUNT": 100,
+      "Z_SCORE": -1.8811793352247328
+    },
+    "interpolation_size": [
+      554,
+      356
+    ]
+  },
+  "reprojected_buildings": 4708,
+  "roads_invalid_input": 0,
+  "buildings_invalid_input": 0,
+  "schools_invalid_input": 0,
+  "restaurants_invalid_input": 0,
+  "landuse_invalid_input": 0,
+  "vector_analysis": {
+    "roads": 466,
+    "buildings": 4708,
+    "schools": 4,
+    "restaurants": 11,
+    "landuse": 62,
+    "roads_buffer_50m": 466,
+    "roads_buffer_50m_dissolved": 1,
+    "schools_buffer_1km_dissolved": 1,
+    "road_school_buffers_intersect": 1,
+    "well_located_houses": 3296,
+    "restaurants_buffer_500m": 11,
+    "houses_restaurants_500m": 996,
+    "solution": 996,
+    "houses_restaurants_before_area_filter": 1247
+  },
+  "network": {
+    "shortest_path": {
+      "features": 1,
+      "cost": 906.4072543652388
+    },
+    "fastest_50kmh": {
+      "features": 1,
+      "cost": 0.018128145087304787
+    },
+    "walking_4kmh": {
+      "features": 1,
+      "cost": 0.22660181359130976
+    },
+    "fastest_speed_limits": {
+      "features": 1,
+      "cost": 0.021808336277044548
+    },
+    "service_lines": 2
+  }
+}

@@ -1,0 +1,5 @@
+# Preserve the packaged files and their SHA-256 checksums on Windows and Linux.
+QGIS_Labs_5_6/** -text
+
+# CSV exports use standard CRLF line endings.
+QGIS_Labs_5_6/reports/*.csv whitespace=cr-at-eol
