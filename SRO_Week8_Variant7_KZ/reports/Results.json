@@ -1,0 +1,269 @@
+{
+  "variant": 7,
+  "topic": "Жол-көлік оқиғалары орын алған қиылыстарды кеңістіктік талдау",
+  "count": 6,
+  "sum": 46,
+  "mean": 7.666666666666667,
+  "median": 6.0,
+  "minimum": 3,
+  "maximum": 18,
+  "range": 15,
+  "missing": 0,
+  "variance_population": 25.22222222222222,
+  "stdev_population": 5.022173057773121,
+  "q1": 4,
+  "q3": 9,
+  "iqr": 5,
+  "quartile_method": "Tukey hinges: median of lower and upper halves",
+  "sum_squared_deviations": 151.33333333333331,
+  "mean_without_F": 5.6,
+  "F_share_pct": 39.130434782608695,
+  "F_over_mean": 2.3478260869565215,
+  "points": [
+    [
+      "A",
+      100,
+      100,
+      3
+    ],
+    [
+      "B",
+      400,
+      100,
+      4
+    ],
+    [
+      "C",
+      100,
+      500,
+      5
+    ],
+    [
+      "D",
+      500,
+      500,
+      7
+    ],
+    [
+      "E",
+      800,
+      300,
+      9
+    ],
+    [
+      "F",
+      900,
+      800,
+      18
+    ]
+  ],
+  "pairs": [
+    {
+      "jup": "A–B",
+      "bastau": "A",
+      "ayaqtau": "B",
+      "x1_m": 100,
+      "y1_m": 100,
+      "x2_m": 400,
+      "y2_m": 100,
+      "dx_m": 300,
+      "dy_m": 0,
+      "distance_m": 300.0
+    },
+    {
+      "jup": "A–C",
+      "bastau": "A",
+      "ayaqtau": "C",
+      "x1_m": 100,
+      "y1_m": 100,
+      "x2_m": 100,
+      "y2_m": 500,
+      "dx_m": 0,
+      "dy_m": 400,
+      "distance_m": 400.0
+    },
+    {
+      "jup": "A–D",
+      "bastau": "A",
+      "ayaqtau": "D",
+      "x1_m": 100,
+      "y1_m": 100,
+      "x2_m": 500,
+      "y2_m": 500,
+      "dx_m": 400,
+      "dy_m": 400,
+      "distance_m": 565.685424949238
+    },
+    {
+      "jup": "A–E",
+      "bastau": "A",
+      "ayaqtau": "E",
+      "x1_m": 100,
+      "y1_m": 100,
+      "x2_m": 800,
+      "y2_m": 300,
+      "dx_m": 700,
+      "dy_m": 200,
+      "distance_m": 728.0109889280518
+    },
+    {
+      "jup": "A–F",
+      "bastau": "A",
+      "ayaqtau": "F",
+      "x1_m": 100,
+      "y1_m": 100,
+      "x2_m": 900,
+      "y2_m": 800,
+      "dx_m": 800,
+      "dy_m": 700,
+      "distance_m": 1063.014581273465
+    },
+    {
+      "jup": "B–C",
+      "bastau": "B",
+      "ayaqtau": "C",
+      "x1_m": 400,
+      "y1_m": 100,
+      "x2_m": 100,
+      "y2_m": 500,
+      "dx_m": -300,
+      "dy_m": 400,
+      "distance_m": 500.0
+    },
+    {
+      "jup": "B–D",
+      "bastau": "B",
+      "ayaqtau": "D",
+      "x1_m": 400,
+      "y1_m": 100,
+      "x2_m": 500,
+      "y2_m": 500,
+      "dx_m": 100,
+      "dy_m": 400,
+      "distance_m": 412.31056256176606
+    },
+    {
+      "jup": "B–E",
+      "bastau": "B",
+      "ayaqtau": "E",
+      "x1_m": 400,
+      "y1_m": 100,
+      "x2_m": 800,
+      "y2_m": 300,
+      "dx_m": 400,
+      "dy_m": 200,
+      "distance_m": 447.21359549995793
+    },
+    {
+      "jup": "B–F",
+      "bastau": "B",
+      "ayaqtau": "F",
+      "x1_m": 400,
+      "y1_m": 100,
+      "x2_m": 900,
+      "y2_m": 800,
+      "dx_m": 500,
+      "dy_m": 700,
+      "distance_m": 860.2325267042627
+    },
+    {
+      "jup": "C–D",
+      "bastau": "C",
+      "ayaqtau": "D",
+      "x1_m": 100,
+      "y1_m": 500,
+      "x2_m": 500,
+      "y2_m": 500,
+      "dx_m": 400,
+      "dy_m": 0,
+      "distance_m": 400.0
+    },
+    {
+      "jup": "C–E",
+      "bastau": "C",
+      "ayaqtau": "E",
+      "x1_m": 100,
+      "y1_m": 500,
+      "x2_m": 800,
+      "y2_m": 300,
+      "dx_m": 700,
+      "dy_m": -200,
+      "distance_m": 728.0109889280518
+    },
+    {
+      "jup": "C–F",
+      "bastau": "C",
+      "ayaqtau": "F",
+      "x1_m": 100,
+      "y1_m": 500,
+      "x2_m": 900,
+      "y2_m": 800,
+      "dx_m": 800,
+      "dy_m": 300,
+      "distance_m": 854.4003745317531
+    },
+    {
+      "jup": "D–E",
+      "bastau": "D",
+      "ayaqtau": "E",
+      "x1_m": 500,
+      "y1_m": 500,
+      "x2_m": 800,
+      "y2_m": 300,
+      "dx_m": 300,
+      "dy_m": -200,
+      "distance_m": 360.5551275463989
+    },
+    {
+      "jup": "D–F",
+      "bastau": "D",
+      "ayaqtau": "F",
+      "x1_m": 500,
+      "y1_m": 500,
+      "x2_m": 900,
+      "y2_m": 800,
+      "dx_m": 400,
+      "dy_m": 300,
+      "distance_m": 500.0
+    },
+    {
+      "jup": "E–F",
+      "bastau": "E",
+      "ayaqtau": "F",
+      "x1_m": 800,
+      "y1_m": 300,
+      "x2_m": 900,
+      "y2_m": 800,
+      "dx_m": 100,
+      "dy_m": 500,
+      "distance_m": 509.9019513592785
+    }
+  ],
+  "closest_pair": {
+    "pair": "A–B",
+    "distance_m": 300.0
+  },
+  "farthest_pair": {
+    "pair": "A–F",
+    "distance_m": 1063.014581273465
+  },
+  "qgis_basic_statistics": {
+    "COUNT": 6,
+    "CV": 0.6550660510138853,
+    "EMPTY": 0,
+    "FILLED": 6,
+    "FIRSTQUARTILE": 4.0,
+    "IQR": 5.0,
+    "MAJORITY": 3.0,
+    "MAX": 18.0,
+    "MEAN": 7.666666666666667,
+    "MEDIAN": 6.0,
+    "MIN": 3.0,
+    "MINORITY": 3.0,
+    "RANGE": 15.0,
+    "STD_DEV": 5.022173057773121,
+    "SUM": 46.0,
+    "THIRDQUARTILE": 9.0,
+    "UNIQUE": 6
+  }
+}
