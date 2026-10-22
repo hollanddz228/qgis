@@ -1,0 +1,19 @@
+{
+  "variant": 7,
+  "sheets": [
+    "Бастапқы деректер",
+    "Статистика",
+    "Қашықтықтар",
+    "Матрица"
+  ],
+  "editable_column_chart": true,
+  "formula_cells": 230,
+  "source_rows_verified": 6,
+  "statistics_verified": 13,
+  "pair_distances_verified": 15,
+  "matrix_cells_verified": 36,
+  "quartile_method": "Tukey hinges: medians of lower/upper halves; Q1=4, Q3=9, IQR=5",
+  "population_stdev": 5.022173057773121,
+  "cached_values_match_results": true,
+  "libreoffice_pdf_render_pages": 4
+}

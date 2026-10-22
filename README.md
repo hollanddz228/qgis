@@ -8,6 +8,7 @@
 
 - [Word есебі: 15 бет, 10 иллюстрация](SRO_Week8_Variant7_KZ/SRO_Week8_Variant7_KZ.docx).
 - [PDF есебі](SRO_Week8_Variant7_KZ/SRO_Week8_Variant7_KZ.pdf).
+- [Excel кестесі және өңделетін диаграмма (.xlsx)](SRO_Week8_Variant7_KZ/SRO_Week8_Variant7_Excel.xlsx): бастапқы деректер, статистика, 15 жұптың қашықтығы және 6 × 6 матрица; есептер формулалармен байланыстырылған.
 - [QGIS жобасы, деректер және есептер — толық ZIP жинағы](SRO_Week8_Variant7_KZ.zip).
 - [Жинақты ашу нұсқаулығы](SRO_Week8_Variant7_KZ/ASHU_NUSQAULYGY.txt).
 
